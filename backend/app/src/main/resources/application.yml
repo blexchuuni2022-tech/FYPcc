@@ -1,0 +1,12 @@
+spring:
+  config:
+    import:
+      # 1. Check current folder (if running from 'app' folder)
+      - optional:file:.env[.properties]
+      # 2. Check 'app' folder (if running from 'backend')
+      - optional:file:app/.env[.properties]
+      # 3. Check full path (if running from 'FYP' root)
+      - optional:file:backend/app/.env[.properties]
+
+gemini:
+  api-key: ${GEMINI_API_KEY}
